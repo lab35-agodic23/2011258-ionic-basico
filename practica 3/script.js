@@ -1,24 +1,14 @@
-let usuarioTxt = document.getElementById("usuario");
+var gastos =[];
+var gastos= document.getElementById("gastostxt");
+var monto= document.getElementById("montotxt");
 
-let p = document.getElementById("mensaje"); //parrafo
+function guardarGastos(){
+    const nuevoGasto = `${gasto.value} $${monto.value}`;
 
-let passwordTtx = document.getElementById("password");
+    gastos.push(nuevoGasto);
 
-function login(){
-    //Login aqui
-    p.innerHTML = "Login Correcto, " + usuarioTxt.value; //cambia el texto en el parrafo
+    console.log (gastos),
 
-    limpiar();
-}
-
-function registro(){
-    //Registro aqui
-    p.innerHTML = "Registro con éxito, " + usuarioTxt.value; //cambia el texto en el parrafo
-
-    limpiar();
-}
-
-function limpiar(){
-    usuarioTxt.value = "";
-    passwordTtx.value = "";
+    gasto.value="";
+    monto.value="";
 }
