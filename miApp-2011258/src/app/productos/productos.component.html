@@ -1,12 +1,10 @@
-<div *ngIf="cargando; else mostrarProductos">
-  <p>Cargando productos...</p>
-</div>
-<ng-template #mostrarProductos>
-  <div *ngFor="let producto of productos">
-    <div>{{ producto.title }}</div>
-    <div>{{ producto.price }}</div>
-    <!-- Otros campos del producto que desees mostrar -->
-  </div>
-</ng-template>
+<ion-card *ngFor="let producto of productos ">
+  <ion-card-title>{{producto.title}}</ion-card-title>
+  <ion-card-content>
+    <p>Precio:<strong>${{producto.price}}</strong></p>
+    <p>Categoria:<strong>{{producto.category}}</strong></p>
+    <p>Descripcion:<strong>{{producto.description}}</strong></p>
 
-
+    <img src="{{producto.image}}" alt="">
+  </ion-card-content>
+</ion-card>
