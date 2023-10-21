@@ -1,14 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { ConsultaService } from '../consulta.service';
 
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.scss'],
+  styleUrls: ['./productos.component.css']
 })
-export class ProductosComponent  implements OnInit {
+export class ProductosComponent implements OnInit {
+  productos: any[] = [];
+  cargando: boolean = true;
+  constructor(private consulta: ConsultaService) { }
 
-  constructor() { }
+  ngOnInit(): void {
+    this.obtenerProductos();
+  }
 
-  ngOnInit() {}
-
+  obtenerProductos(): void {
+    this.consulta.getProductos()
+      .subscribe(
+        (resp: Object) => {
+          console.log(resp);
+          this.productos = resp as any[];
+        }
+      );
+  }
 }
+

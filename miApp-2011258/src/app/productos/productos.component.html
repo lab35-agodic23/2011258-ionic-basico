@@ -1,3 +1,12 @@
-<p>
-  productos works!
-</p>
+<div *ngIf="cargando; else mostrarProductos">
+  <p>Cargando productos...</p>
+</div>
+<ng-template #mostrarProductos>
+  <div *ngFor="let producto of productos">
+    <div>{{ producto.title }}</div>
+    <div>{{ producto.price }}</div>
+    <!-- Otros campos del producto que desees mostrar -->
+  </div>
+</ng-template>
+
+
