@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 import { ProductosComponent } from './productos/productos.component';
 import { ProductoDetalleComponent } from './producto-detalle/producto-detalle.component';
+import { ListaAlumnosComponent } from './lista-alumnos/lista-alumnos.component';
 
 
 
@@ -13,12 +14,16 @@ const routes: Routes = [
   },
   
   {
-    path: 'productos',
+    path: 'produtos',
     component: ProductosComponent,
   },
   {
+    path: 'alumnos',
+    component: ListaAlumnosComponent,
+  },
+  {
     path: '',
-    redirectTo: '/productos',
+    redirectTo: '/alumnos',
     pathMatch: 'full'
   },
   {
