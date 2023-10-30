@@ -1,16 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Alumno } from './alumno.model';
 
 @Component({
   selector: 'app-lista-alumnos',
   templateUrl: './lista-alumnos.component.html',
-  styleUrls: ['./lista-alumnos.component.scss'],
+  styleUrls: ['./lista-alumnos.component.scss']
 })
-export class ListaAlumnosComponent  implements OnInit {
+export class ListaAlumnosComponent  {
+  nuevoAlumno: Alumno;
+  alumnos: Alumno[] = [];
 
-  constructor() { }
+  constructor() {
+    this.nuevoAlumno = { nombre: '', presente: false };
+  }
+
+  agregarAlumno() {
+    if (this.nuevoAlumno.nombre) {
+      this.alumnos.push(this.nuevoAlumno);
+      this.nuevoAlumno = { nombre: '', presente: false };
+    }
+  }
 
   ngOnInit() {}
 
-  alumnos : any = ["Carlos", "Ximena", "Alberto", "Eduardo", "Baraba", "Georgina", "Kevin"];
+  alumno : any = ["Carlos", "Ximena", "Alberto", "Eduardo", "Baraba", "Georgina", "Kevin"];
 }
-
