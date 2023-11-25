@@ -5,7 +5,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { ProductoDetalleComponent } from './producto-detalle/producto-detalle.component';
 import { ListaAlumnosComponent } from './lista-alumnos/lista-alumnos.component';
 
-
+import { CamaraComponent } from './camera/camera.component';
 
 const routes: Routes = [
   {
@@ -22,13 +22,13 @@ const routes: Routes = [
     component: ListaAlumnosComponent,
   },
   {
-    path: '',
-    redirectTo: '/alumnos',
-    pathMatch: 'full'
+    path: 'camara',
+    component : CamaraComponent
   },
   {
-    path: 'producto/:id',
-    component: ProductoDetalleComponent,
+    path: '',
+    redirectTo: '/camara',
+    pathMatch: 'full'
   },
 ];
 
